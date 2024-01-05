@@ -15,4 +15,4 @@ jobs:
     - name: run
       run: |
         gcc main.c
-        ./a.out test
+        ./a.out 10
