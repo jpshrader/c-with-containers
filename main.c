@@ -22,9 +22,9 @@ int main(int argc, char *argv[]) {
         return 1;
     }
 
-    int n = atoi(argv[1]);
+    int numbers = atoi(argv[1]);
     struct LinkedList* list = (struct LinkedList*) malloc(sizeof(struct LinkedList));
-    for (int i = 0; i < n; i++) {
+    for (int i = 0; i < numbers; i++) {
         append(list, i);
     }
 
