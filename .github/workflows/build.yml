@@ -1,10 +1,9 @@
-name: C/C++ CI
+name: build
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ main ]
   pull_request:
-    branches: [ "main" ]
 
 jobs:
   build:
@@ -13,7 +12,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: build
+    - name: run
       run: |
         gcc main.c
         ./a.out test

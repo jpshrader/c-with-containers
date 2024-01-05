@@ -18,15 +18,13 @@ void reverseList(struct LinkedList* list);
 
 int main(int argc, char *argv[]) {
     if (argc < 2) {
-        printf("error: must provide a name\n");
+        printf("error: must provide a number\n");
         return 1;
     }
 
-    printf("hello, %s!\n", argv[1]);
-    printf("let's do some linked list stuff\n");
-
+    int n = atoi(argv[1]);
     struct LinkedList* list = (struct LinkedList*) malloc(sizeof(struct LinkedList));
-    for (int i = 0; i < 10; i++) {
+    for (int i = 0; i < n; i++) {
         append(list, i);
     }
 
@@ -70,7 +68,12 @@ void printList(struct LinkedList* list) {
     struct Node* node = list->head;
     printf("[");
     while (node != NULL) {
-        printf(" %d ", node->data);
+        if (node->next == NULL) {
+            printf("%d", node->data);
+            break;
+        } else {
+            printf("%d, ", node->data);
+        }
         node = node->next;
     }
     printf("]\n");
